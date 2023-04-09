@@ -2,7 +2,7 @@ import { Plugin } from 'esbuild'
 import { tsconfigPathsToRegExp, match } from 'bundle-require'
 
 // Must not start with "/" or "./" or "../" or alphabetical letter and colon (windows drive)
-const NON_NODE_MODULE_RE = /^[a-zA-Z]:|^[^.\/]|^\.[^.\/]|^\.\.[^\/]/
+const NON_NODE_MODULE_RE = /^[^.\/]|^\.[^.\/]|^\.\.[^\/]|^[a-zA-Z]:/
 
 export const externalPlugin = ({
   external,
